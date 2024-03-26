@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Termos de Uso VPN</title>
+    <style>
+        /* Estilos para tema claro */
+        body.theme-light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Estilos para tema escuro */
+        body.theme-dark {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <h1>Termos de Uso para Uso de VPN</h1>
@@ -25,5 +38,24 @@
 
         <li><strong>Alterações nos Termos de Uso:</strong> Estes termos de uso estão sujeitos a alterações periódicas, a critério exclusivo da VPN. Os usuários serão notificados sobre quaisquer alterações significativas nos termos de uso. O uso contínuo do serviço após tais alterações constitui a aceitação dos novos termos.</li>
     </ol>
+
+    <script>
+        // Verifica se o usuário está usando um tema claro ou escuro
+        function checkThemePreference() {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            return prefersDarkScheme ? 'theme-dark' : 'theme-light';
+        }
+
+        // Aplica o tema preferido
+        function applyTheme(theme) {
+            document.body.classList.add(theme);
+        }
+
+        // Verifica o tema preferido e aplica-o
+        document.addEventListener('DOMContentLoaded', function() {
+            const themePreference = checkThemePreference();
+            applyTheme(themePreference);
+        });
+    </script>
 </body>
 </html>
